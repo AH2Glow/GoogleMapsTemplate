@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+#map {
+    height: 100%;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marker-info {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    background-color: white;
+    transform: translateX(100%);
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    padding: 20px;
+}
+
+.marker-info.open {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.marker-info-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.marker-info-close::before,
+.marker-info-close::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    background: #000;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.marker-info-close::before {
+    transform: rotate(45deg);
+}
+
+.marker-info-close::after {
+    transform: rotate(-45deg);
+}
+
+.marker-info-close:hover::before,
+.marker-info-close:hover::after {
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+}

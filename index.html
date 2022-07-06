@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>My Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script defer src="data.js"></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js" defer></script>
+
+    <script defer src="js/MapView.js"></script>
+    <script defer src="js/MapController.js"></script>
+
+    <script defer src="script.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArMvToQ5RSFnGFeK97fKGq7NMX5psTSwM&callback=initMap&v=weekly"
+        defer></script>
+
+</head>
+
+<body>
+    <div class="map-container">
+        <div id="map" data-cluster="true" data-init-lat="51.88508867069372" data-init-lng="5.849896372736485"
+            data-init-zoom="12"></div>
+        <!-- Data attributes are used to set the initial values for the position and zoom level. -->
+
+        <div class="marker-info" data-delay="300">
+            <!-- Delay is applied on reopening and may be used when time-based animations are used on window toggle. -->
+
+            <h3 class="marker-info-target" data-key="name"></h3>
+            <p class="marker-info-target" data-key="type"></p>
+            <!-- A combination of classname "marker-info-target" and a data-key attribute is used to set the data of the current marker. -->
+
+            <button class="marker-info-close"></button>
+            <!-- Classname 'marker-info-close' is targeted for closing the window. -->
+        </div>
+
+
+    </div>
+</body>
+
+</html>
