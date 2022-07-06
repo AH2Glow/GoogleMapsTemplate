@@ -10,7 +10,7 @@ class MapController {
                 train: "train.svg",
                 bus: "bus.svg",
             },
-            "../assets/svg/"
+            "/assets/svg/"
         );
 
         this.view.initiateData(data);
